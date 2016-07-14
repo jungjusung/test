@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script>
+var x=0;
+var y=0;
+var xMove=5;
+var yMove=5;
+function openWin(){
+	var myWin=window.open("zipcode.html","pop","width=200,height=200");
+
+	setTimeout("openWin()",10)
+	if(0>x||screen.width<x)
+	{
+		xMove=-xMove;
+	}
+	
+	x+=xMove;
+
+	myWin.moveTo(x,y);
+}
+</script>
+</head>
+<body>
+	<a href="javascript:openWin()">새창 움직이기</a>
+</body>
+</html>

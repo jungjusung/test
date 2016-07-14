@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>우편번호검색</title>
+</head>
+<script>
+//새창에서 선택한 현재의 우편번호 텍스트를,
+//우편번호 입력란에 채워넣는다!! + 주소도 채워넣는다
+function setPost(zip,addr){
+	var zipSplit=zip.split("-");
+	opener.document.form1.zipcode1.value=zipSplit[0];
+	opener.document.form1.zipcode2.value=zipSplit[1];
+	opener.document.form1.addr1.value=addr;
+	window.close();
+	//현재창 닫기
+	opener.document.form1.addr2.focus();
+}
+</script>
+<body >
+<table width="100%" border="1px">
+	<tr>
+		<td colspan="2" align="center">
+			<input type="text">
+			<img src="images/search_button.png" width="30px" onClick="">
+		</td>
+	</tr>
+	<tr onMouseOver="this.style.background='#99ccff'" onMouseOut="this.style.background=''">
+		<td><a href="javascript:setPost('123-456','서울 강남구 신사동 도화빌딩')">123-456</a></td>
+		<td>서울 강남구 신사동 도화빌딩</td>
+	</tr>
+	<tr onMouseOver="this.style.background='#99ccff'" onMouseOut="this.style.background=''">
+		<td><a href="javascript:setPost('133-112','서울 성수동 성수1가 2동')">133-112</a></td>
+		<td>서울 성수동 성수1가 2동</td>
+	</tr>
+	<tr onMouseOver="this.style.background='#99ccff'" onMouseOut="this.style.background=''">
+		<td><a href="javascript:setPost('133-111','서울 성수동 성수1가 1동')">133-111</a></td>
+		<td>서울 성수동 성수1가 1동</td>
+	</tr>
+	<tr onMouseOver="this.style.background='#99ccff'" onMouseOut="this.style.background=''">
+		<td><a href="javascript:setPost('656-999','경기 용인시 수지구 죽전1동')">656-999</a></td>
+		<td>경기 용인시 수지구 죽전1동</td>
+	</tr>
+</table>
+</body>
+</html>
